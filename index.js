@@ -24,7 +24,7 @@ app.use("/uploads", express.static("uploads"));
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(() => {
+    app.listen(process.env.PORT, () => {
       console.log("listening  lets ngo", process.env.PORT);
     });
   })
