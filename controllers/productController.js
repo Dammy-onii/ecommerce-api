@@ -44,8 +44,10 @@ const createProduct = async (req, res) => {
       stock,
       category,
     });
+    res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ error: error.message });
+    console.log(error);
   }
 };
 
