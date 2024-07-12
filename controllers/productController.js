@@ -31,12 +31,8 @@ const getProductByID = async (req, res) => {
 
 // Create Product
 const createProduct = async (req, res) => {
-  const { name, description, price, size, stock, category } = req.body;
+  const { image, name, description, price, size, stock, category } = req.body;
   
-  console.log("Request Body:", req.body);
-  console.log("Uploaded File:", req.file);
-
-  const image = req.file ? req.file.path : null;
 
   try {
     const product = await Product.create({

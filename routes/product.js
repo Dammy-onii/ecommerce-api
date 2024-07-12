@@ -1,7 +1,5 @@
 const express = require("express");
 
-const uploader = require("../config/uploader");
-
 const {
   getProducts,
   getProductByID,
@@ -20,7 +18,7 @@ router.get("/", getProducts);
 router.get("/:id", getProductByID);
 
 // Create Product
-router.post("/", uploader.single("image"), createProduct);
+router.post("/", createProduct);
 
 // Update Product
 router.patch("/:id", updateProduct);
