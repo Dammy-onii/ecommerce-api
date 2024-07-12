@@ -21,8 +21,6 @@ app.use((req, res, next) => {
 
 app.use("/api/products", productRoutes);
 
-app.use("/uploads", express.static("uploads"));
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

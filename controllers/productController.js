@@ -32,7 +32,6 @@ const getProductByID = async (req, res) => {
 // Create Product
 const createProduct = async (req, res) => {
   const { image, name, description, price, size, stock, category } = req.body;
-  
 
   try {
     const product = await Product.create({
@@ -45,9 +44,11 @@ const createProduct = async (req, res) => {
       category,
     });
     res.status(201).json(product);
+    console.log(req.body)
   } catch (error) {
     res.status(400).json({ error: error.message });
     console.log(error);
+    console.log(req.body)
   }
 };
 
